@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,17 +28,17 @@ public class CityController {
 		return cityService.getAll();
 	}
 	
-	@GetMapping("/add")
+	@PostMapping("/add")
 	public void add(@RequestBody City city) { //@RequestBody anotasyonu buraya eklenecek veriyi almamız için.
 		cityService.add(city);
 	}
 	
-	@GetMapping("/update")
+	@PostMapping("/update")
 	public void update(@RequestBody City city) {
 		cityService.update(city);
 	}
 	
-	@GetMapping("/delete")
+	@PostMapping("/delete")
 	public void delete(@RequestBody City city) {
 		cityService.delete(city);
 	}
